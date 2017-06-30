@@ -14,7 +14,7 @@ for node in nodes:
 	nodevalue = node.childNodes[0].nodeValue
 	if nodevalue.endswith('dp'):
 		num = nodevalue.replace('dp', '')
-		node.childNodes[0].nodeValue = int(round(float(num)/DPR));
+		node.childNodes[0].nodeValue = str(int(round(float(num)/DPR))) + 'dp'
 
 newfile = codecs.open('new_dimens.xml', 'w', 'utf-8')
 dom.writexml(newfile, encoding='utf-8')
